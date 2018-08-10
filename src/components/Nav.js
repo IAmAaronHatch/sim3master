@@ -1,15 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-function Nav () {
+function Nav (props) {
+    console.log(1111111, props)
     return (
         <div>
             Nav
+            <h4>{props.username}</h4>
+            <img src={props.profilePic}/>
             <Link to='/dashboard'><button>Home</button></Link>
             <Link to='/new'><button>New Post</button></Link>
             <Link to='/'><button>Logout</button></Link>
+            
         </div>
     )
 }
 
-export default Nav
+let mapStateToProps = state => {
+    return {
+        profilePic: state.profilePic,
+        username: state.username
+    }
+}
+
+export default connect(mapStateToProps)(Nav)

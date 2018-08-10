@@ -15,6 +15,10 @@ class Auth extends Component {
         return (
             <div>
             Auth
+            <input placeholder='username'/>
+            <input placeholder='password'/>
+            <button>Login</button>
+            <button>Register</button>
             </div>
         )
     }
